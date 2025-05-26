@@ -2,24 +2,43 @@
  
 int main() {
 
-    float nota1, nota2, nota3;
-    float media;
+char produtoA [30] = "Produto A";
+char produtoB [30] = "Produto B";
 
-    printf("**** Programa de Cálculo de Média ***\n\n");
+unsigned int estoqueA = 1000;
+unsigned int estoqueB = 2000;
 
-    printf("Digite a  sua primeira nota:\n ");
-    scanf("%f", &nota1);
-
-    printf("Digite a  sua segunda nota:\n ");
-    scanf("%f", &nota2);
-
-    printf("Digite a  sua terceira nota:\n ");
-    scanf("%f", &nota3);
-
-    media = (nota1 + nota2 + nota3) / 3;
-
-    printf("A média é: %.2f\n", media);
+float valorA = 10.50;
+float valorB = 20.40;
 
 
-    return 0;
+unsigned int estoqueMinimoA = 500;
+unsigned int estoqueMinimoB = 2500;
+
+
+double valorTotalA;
+double valorTotalB; 
+
+int resultadoA, resultadoB;
+
+printf("Produto %s tem estoque de %u e o valor unitário de R$ %.2f\n", produtoA, estoqueA, valorA);
+printf("Produto %s tem estoque de %u e o valor unitário de R$ %.2f\n", produtoB, estoqueB, valorB);
+
+
+// comparando os estoques
+
+resultadoA = estoqueA > estoqueMinimoA;
+resultadoB = estoqueB > estoqueMinimoB;
+
+printf(" O produto %s tem estoque minimo %d\n", produtoA, resultadoA);
+printf(" O produto %s tem estoque minimo %d\n", produtoB, resultadoB);
+
+
+printf("O valor total de A (R$ %.2f) é maior que o valor total de B (R$%.2f): %d\n "
+,(estoqueA * valorA), 
+ (estoqueB * valorB), 
+ (estoqueA * valorA) > (estoqueB * valorB));
+
+
+
 }
